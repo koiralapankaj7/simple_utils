@@ -58,6 +58,7 @@ extension WidgetX on Iterable<Widget> {
   }
 }
 
+///
 extension ListX<T> on List<T> {
   /// Remove the first occurrence of the item returned from the [test] callback.
   ///
@@ -112,6 +113,7 @@ extension ListX<T> on List<T> {
 
 ///
 extension MapX<K, V> on Map<K, V> {
+  ///
   MapEntry<K, V> entryAt(int index) {
     if (index < 0 || index >= length) {
       throw IndexError.withLength(index, length);

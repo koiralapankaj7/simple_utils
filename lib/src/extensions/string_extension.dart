@@ -36,7 +36,8 @@ extension SimpleUtilsStringX on String {
   /// Returns true if all characters in the string are in upper case.
   bool get isUpper => toUpperCase() == this;
 
-  /// Returns true if the string consists of the same character, case insensitive.
+  /// Returns true if the string consists of the same character,
+  /// case insensitive.
   bool get containsSameChar {
     if (trim().isEmpty) return false;
     final char = this[0].toLowerCase();
@@ -98,5 +99,22 @@ extension SimpleUtilsStringX on String {
       chunks.add(substring(i, end));
     }
     return chunks;
+  }
+
+  /// Convert camelCase string into title `Camel Case`
+  String get camelCaseToTitle {
+    if (isEmpty) return this;
+
+    final buffer = StringBuffer(this[0].toUpperCase());
+
+    for (var i = 1; i < length; i++) {
+      final char = this[i];
+      if (char.toUpperCase() == char) {
+        buffer.write(' ');
+      }
+      buffer.write(char);
+    }
+
+    return buffer.toString();
   }
 }
