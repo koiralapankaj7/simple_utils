@@ -56,6 +56,28 @@ extension WidgetX on Iterable<Widget> {
     }
     return c;
   }
+
+  ///
+  List<Widget> paddedX({double space = 12.0}) {
+    final c = List.of(this);
+    for (var i = c.length; i-- > 0;) {
+      if (i > 0) {
+        c.insert(i, SizedBox(width: space));
+      }
+    }
+    return c;
+  }
+
+  ///
+  List<Widget> paddedY({double space = 12.0}) {
+    final c = List.of(this);
+    for (var i = c.length; i-- > 0;) {
+      if (i > 0) {
+        c.insert(i, SizedBox(height: space));
+      }
+    }
+    return c;
+  }
 }
 
 ///

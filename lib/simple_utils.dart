@@ -12,4 +12,4 @@ export 'src/hive_file.dart';
 export 'src/save_load_mixin.dart';
 export 'src/simple_reg_exp.dart';
 export 'src/throttler.dart';
-export 'src/value_ctrl.dart';
+export 'src/value.dart';
