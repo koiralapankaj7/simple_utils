@@ -29,7 +29,9 @@ class ValueSerializer<T> {
     return switch (T) {
       String => source as T?,
       int => int.tryParse(source) as T?,
-      double => double.tryParse(source) as T?,
+      double => () {
+          return double.tryParse(source) as T?;
+        }(),
       num => num.tryParse(source) as T?,
       DateTime => DateTime.tryParse(source) as T?,
       bool => source.toBool as T?,
